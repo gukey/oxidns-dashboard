@@ -13,7 +13,7 @@ export type Mode = "light" | "dark" | "auto";
 
 const K_STYLE = "oxidns-dashboard.style";
 const K_MODE = "oxidns-dashboard.theme";
-const DEFAULT_STYLE: StyleId = "shadcn";
+const DEFAULT_STYLE: StyleId = "liquid";
 
 const read = (k: string) => {
   try {

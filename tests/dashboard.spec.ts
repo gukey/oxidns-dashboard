@@ -7,6 +7,7 @@ test('single file has no runtime asset dependencies', async ({page}) => {
   expect(html).not.toMatch(/<script[^>]+src=|<link[^>]+rel="stylesheet"/);
   await page.goto('/');
   await expect(page.locator('#ov-stats')).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('data-style','liquid');
 });
 
 for (const blocked of [false,true]) test(`styles, mode and mobile picker; storage blocked=${blocked}`, async ({page}) => {
