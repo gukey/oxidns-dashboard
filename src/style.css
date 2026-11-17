@@ -1,6 +1,6 @@
 /* ============ tokens ============ */
 :root {
-  --font: "Inter", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font: "Noto Sans CJK SC", "Noto Sans SC", "Inter", "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
   --r: 12px;
   --r-sm: 8px;
@@ -65,6 +65,21 @@
 }
 
 /* ============ base ============ */
+.fp-page { display: grid; gap: 16px; min-width: 0; }
+.fp-page > p { margin: 0; line-height: 1.7; }
+.fp-editor { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 20px; }
+.fp-editor label, .fp-options { display: grid; gap: 8px; min-width: 0; }
+.fp-editor label { align-content: start; }
+.fp-editor textarea { width: 100%; min-height: 150px; resize: vertical; border-radius: var(--r-sm); font-family: var(--mono); }
+.fp-editor select { width: 100%; }
+.fp-status { padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); overflow-wrap: anywhere; }
+.fp-error { color: var(--red); overflow-wrap: anywhere; white-space: pre-wrap; }
+.fp-table-wrap { overflow-x: auto; }
+.fp-table-wrap td { vertical-align: top; }
+.fp-table-wrap code { overflow-wrap: anywhere; white-space: normal; }
+.fp-table-wrap td:last-child { min-width: 110px; }
+.fp-page [hidden] { display: none !important; }
+@media (max-width: 650px) { .fp-editor { grid-template-columns: minmax(0, 1fr); } }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
@@ -728,6 +743,7 @@ details summary { cursor: pointer; color: var(--muted); font-size: 12.5px; margi
 .pop { position: fixed; z-index: 45; width: 300px; background: var(--panel); border: 1px solid var(--line2); border-radius: 14px; padding: 12px; box-shadow: 0 20px 50px -16px rgba(0,0,0,.5); opacity: 0; transform: translateY(-4px); transition: opacity 150ms, transform 150ms; }
 [data-style="liquid"] .pop { background: color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter: blur(30px) saturate(1.8); }
 [data-style="brutal"] .pop { border: 2.5px solid var(--ink); box-shadow: 5px 5px 0 var(--ink); }
+.pop { max-width: calc(100vw - 16px); overflow-y: auto; overscroll-behavior: contain; }
 .pop.in { opacity: 1; transform: none; }
 .pop h5 { margin: 4px 4px 8px; font-size: 11.5px; font-weight: 600; color: var(--muted); letter-spacing: .04em; }
 .pop h5:not(:first-child) { margin-top: 14px; }

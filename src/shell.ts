@@ -10,10 +10,12 @@ import { plugins } from "./pages/plugins";
 import { config, configDirty } from "./pages/config";
 import { logs } from "./pages/logs";
 import { system } from "./pages/system";
+import { forward } from "./pages/forward";
 
 const ROUTES: { path: string; page: Page; icon: string }[] = [
   { path: "overview", page: overview, icon: "gauge" },
   { path: "queries", page: queries, icon: "list" },
+  { path: "force-forward", page: forward, icon: "zap" },
   { path: "cache", page: cache, icon: "db" },
   { path: "plugins", page: plugins, icon: "puzzle" },
   { path: "config", page: config, icon: "file" },
