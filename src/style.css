@@ -664,7 +664,7 @@ details summary { cursor: pointer; color: var(--muted); font-size: 12.5px; margi
 [data-style="liquid"] .rank li { border-radius: 999px; }
 @media (max-width: 860px) {
   [data-style="liquid"] .main { margin-left: 0; }
-  [data-style="liquid"] .side { transform: translateX(-120%); }
+  [data-style="liquid"] .side { transform: translateX(-120%); z-index: 40; overflow-y: auto; overscroll-behavior: contain; }
   [data-style="liquid"] .side.open { transform: none; }
 }
 
